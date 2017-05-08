@@ -15,6 +15,8 @@ public class Word {
     /** Image resource ID for the word */
     private int mImageResourceId;
 
+    
+
     /**
      * Create a new Word object.
      *
@@ -63,8 +65,8 @@ public class Word {
      * Return the image resource ID of the word.
      *
      */
-    public int getImageResourceId() {
-        return mImageResourceId;
-    }
+    public int getImageResourceId() {return mImageResourceId; }
+
+
 
 }
