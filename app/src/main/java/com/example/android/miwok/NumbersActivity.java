@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,7 +19,7 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.word_list);
 
         // Create a list of words
-        ArrayList<Word> words = new ArrayList<Word>();
+        final ArrayList<Word> words = new ArrayList<Word>();
 
         words.add(new Word("one", "lutti", R.drawable.number_one));
         words.add(new Word("two", "otiiko", R.drawable.number_two));
@@ -58,9 +57,12 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position,
                                     long id) {
-                Toast.makeText(NumbersActivity.this, "Play sound", Toast.LENGTH_SHORT).show();
-                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
-                mMediaPlayer.start();
+                if (position == 0) {
+                    mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
+                    mMediaPlayer.start();
+
+                }
+
             }
         });
 
