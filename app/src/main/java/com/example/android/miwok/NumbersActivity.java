@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -59,18 +58,12 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position,
                                     long id) {
-<<<<<<< HEAD
+
                 if (position == 0) {
                     mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
                     mMediaPlayer.start();
-
                 }
 
-=======
-                Toast.makeText(NumbersActivity.this, "Play sound", Toast.LENGTH_SHORT).show();
-                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
-                mMediaPlayer.start();
->>>>>>> d84db96c60dcb61afc08b1652c7844e8f8f6f8b4
             }
         });
 
