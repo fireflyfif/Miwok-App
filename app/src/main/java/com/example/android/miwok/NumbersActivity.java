@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -46,6 +47,7 @@ public class NumbersActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list);
 
 
+
         // Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
         // {@link ListView} will display list items for each word in the list of words.
         // Do this by calling the setAdapter method on the {@link ListView} object and pass in
@@ -57,12 +59,18 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position,
                                     long id) {
+<<<<<<< HEAD
                 if (position == 0) {
                     mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
                     mMediaPlayer.start();
 
                 }
 
+=======
+                Toast.makeText(NumbersActivity.this, "Play sound", Toast.LENGTH_SHORT).show();
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
+                mMediaPlayer.start();
+>>>>>>> d84db96c60dcb61afc08b1652c7844e8f8f6f8b4
             }
         });
 
