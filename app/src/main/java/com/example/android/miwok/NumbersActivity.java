@@ -1,12 +1,18 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
+
+    private MediaPlayer mMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,44 +47,23 @@ public class NumbersActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list);
 //        listView.setBackgroundColor(getResources().getColor(R.color.category_numbers));
 
+
         // Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
         // {@link ListView} will display list items for each word in the list of words.
         // Do this by calling the setAdapter method on the {@link ListView} object and pass in
         // 1 argument, which is the {@link ArrayAdapter} with the variable name itemsAdapter.
         listView.setAdapter(adapter);
 
-//        // Find the root view of the whole layout
-//        LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
 
-
-//        // Create a variable to keep track of the current index position
-//        int count = 0;
-//
-//        // While Loop example
-//        while(count < words.size()) {
-//            // Create a new TextView
-//            TextView wordView = new TextView(this);
-//
-//            // Set the text to be word at the current index
-//            wordView.setText(words.get(count));
-//
-//            // Add this TextView as another child to the root view of this layout
-//            rootView.addView(wordView);
-//
-//            // Update counter variable
-//            count++;
-//        }
-
-//        for(int index = 0; index < words.size(); index++) {
-//            // Create a new TextView
-//            TextView wordView = new TextView(this);
-//
-//            // Set the text to be word at the current index
-//            wordView.setText(words.get(index));
-//
-//            // Add this TextView as another child to the root view of this layout
-//            rootView.addView(wordView);
-//        }
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position,
+                                    long id) {
+                Toast.makeText(NumbersActivity.this, "Play sound", Toast.LENGTH_SHORT).show();
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.number_one);
+                mMediaPlayer.start();
+            }
+        });
 
 
     }
