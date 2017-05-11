@@ -41,13 +41,15 @@
     <!-- Style for the TextView in the list_item View -->
     <style name="ListItem_TextView">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingLeft">@dimen/padding_16dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">top</item>
         <item name="android:textColor">@color/text_color</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 
     <style name="ListItem_TextView.Bold">
+        <item name="android:gravity">bottom</item>
         <item name="android:textStyle">bold</item>
     </style>
 
